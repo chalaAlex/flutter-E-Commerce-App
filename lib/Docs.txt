@@ -1,0 +1,22 @@
+DOCUMENTATION FOR E-COMMERCE APP:
+*********************************
+- STEPS TO BE FOLLOWED BEFORE IMPLEMENTATION:
+  1. Identify the Model, State(Provider), Screen, Controllers of the App.
+     eg.- Model folder may be used as the storage of data to be used by the app.
+        - May be includes Lists of each Product.
+
+  2. Keep screens separately inside one root folder. eg. Screen.
+
+  3.
+
+SKILLS IN DEVELOPING FLUTTER APP:
+*********************************
+1. Know how to use MultiProvider() Widgets to provide multiple extended State ChangeNotifiers for the Widget tree.
+2. GoogleFonts Package from https://pub.dev/packages/google_fonts
+3.
+
+
+
+WIDGETS:
+*******
+1.
