@@ -154,3 +154,43 @@
 //     );
 //   }
 // }
+
+import 'package:e_appp/constants.dart';
+import 'package:e_appp/screens/Home/Widget/home_app_bar.dart';
+import 'package:e_appp/screens/Home/Widget/image_slider.dart';
+import 'package:e_appp/screens/Home/Widget/search_bar.dart';
+import 'package:flutter/material.dart';
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 15.0,
+              ),
+              CustomAppBar(),
+              SizedBox(height: 15.0,),
+              MySearchBar(),
+              SizedBox(height: 15.0,),
+              ImageSlider(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

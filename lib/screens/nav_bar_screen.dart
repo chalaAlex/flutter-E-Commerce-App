@@ -110,7 +110,11 @@
 //   }
 // }
 
+import 'package:e_appp/constants.dart';
+import 'package:e_appp/screens/Favorite/favorite.dart';
+import 'package:e_appp/screens/Home/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'Cart/cart_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -122,14 +126,38 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int currentIndex = 2;
 
+  List screens = const [
+    Scaffold(),
+    Favorite(),
+    HomeScreen(),
+    CartScreen(),
+    Scaffold(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            currentIndex = 2;
+
+          });
+        },
+        shape: const CircleBorder(),
+        backgroundColor: kprimaryColor,
+        child: const Icon(
+          Icons.home,
+          color: Colors.blue,
+          size: 35,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         elevation: 1,
         height: 60,
-        color: Colors.black,
-        shape: CircularNotchedRectangle(),
+        color: Colors.white,
+        shape: const CircularNotchedRectangle(),
         notchMargin: 10,
         clipBehavior: Clip.antiAliasWithSaveLayer,
         child: Row(
@@ -137,15 +165,57 @@ class _BottomNavBarState extends State<BottomNavBar> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  currentIndex = 0;
+                });
+              },
               icon: Icon(
-                  Icons.grid_view_outlined,
-                  size: ,
+                Icons.grid_view_outlined,
+                size: 30,
+                color: currentIndex == 0 ? kprimaryColor : Colors.grey.shade400,
               ),
-            )
+            ),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  currentIndex = 1;
+                });
+              },
+              icon: Icon(
+                Icons.favorite_border,
+                size: 30,
+                color: currentIndex == 1 ? kprimaryColor : Colors.grey.shade400,
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  currentIndex = 2;
+                });
+              },
+              icon: Icon(
+                Icons.shopping_cart_outlined,
+                size: 30,
+                color: currentIndex == 2 ? kprimaryColor : Colors.grey.shade400,
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  currentIndex = 3;
+                });
+              },
+              icon: Icon(
+                Icons.person,
+                size: 30,
+                color: currentIndex == 3 ? kprimaryColor : Colors.grey.shade400,
+              ),
+            ),
           ],
         ),
       ),
+      body: screens[currentIndex],
     );
   }
 }
