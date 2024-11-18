@@ -5,12 +5,7 @@
 ## Screenshots.
 <p align="center">
 <<<<<<< HEAD
-  <img src="images/shots/shots.png" alt="Image 1" width="30%" />
-=======
-  <img src="images/shots/shot1.png" alt="Image 1" width="30%" />
->>>>>>> c1db6a234cb5084f7c4ca4f849e0e6474b5c41d2
-  <img src="images/shots/Screenshot 2024-11-18 141828.png" alt="Image 2" width="30%" />
-  <img src="images/shots/Screenshot 2024-11-18 141828.png" alt="Image 3" width="30%" />
+  <img src="images/shots/shots1.png" alt="Image 1" width="30%" />
 </p>
 
 ## Table of Contents
