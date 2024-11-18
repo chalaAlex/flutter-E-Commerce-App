@@ -61,7 +61,9 @@ class CustomAppBar extends StatelessWidget {
           ),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+
+          },
           iconSize: 20,
           icon: const Icon(
             Icons.notifications_outlined,

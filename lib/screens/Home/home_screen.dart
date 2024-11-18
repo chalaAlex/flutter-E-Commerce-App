@@ -155,7 +155,7 @@
 //   }
 // }
 
-import 'package:e_appp/constants.dart';
+import 'package:e_appp/screens/Home/Widget/category.dart';
 import 'package:e_appp/screens/Home/Widget/home_app_bar.dart';
 import 'package:e_appp/screens/Home/Widget/image_slider.dart';
 import 'package:e_appp/screens/Home/Widget/search_bar.dart';
@@ -169,9 +169,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int currentSlider = 0;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
@@ -186,7 +187,17 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 15.0,),
               MySearchBar(),
               SizedBox(height: 15.0,),
-              ImageSlider(),
+              ImageSlider(
+                currentSlide: currentSlider,
+                onChanged: (value) {
+                  setState(
+                    () {
+                      currentSlider = value;
+                    },
+                  );
+                },
+              ),
+              const Categories(),
             ],
           ),
         ),
