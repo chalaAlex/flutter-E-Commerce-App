@@ -3,7 +3,11 @@
 ### This project is a Flutter-based mobile application that helps users determine their Body Mass Index based on their weight and height, providing insights into their health status. 
 
 ## Screenshots.
-![Alt text](relative/path/to/image.png)
+<p align="center">
+  <img src="images/shots/Screenshot 2024-11-18 141828.png" alt="Image 1" width="30%" />
+  <img src="images/shots/Screenshot 2024-11-18 141828.png" alt="Image 2" width="30%" />
+  <img src="images/shots/Screenshot 2024-11-18 141828.png" alt="Image 3" width="30%" />
+</p>
 
 ## Table of Contents
 - [Features](#features)
