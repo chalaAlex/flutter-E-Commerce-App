@@ -139,14 +139,14 @@ class ProductCard extends StatelessWidget {
               color: kcontentColor,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(
                   height: 15,
                 ),
                 Center(
                   child: Image.asset(
-                    "images/all/wireless.png",
+                    product.image,
                     width: 130,
                     height: 130,
                     fit: BoxFit.cover,

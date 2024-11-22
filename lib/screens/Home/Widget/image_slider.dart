@@ -96,12 +96,20 @@ class ImageSlider extends StatelessWidget {
                   "images/slider.jpg",
                   fit: BoxFit.cover,
                 ),
-                // Image.asset(
-                //   "images/slider2.png",
-                //   fit: BoxFit.cover,
-                // ),
                 Image.asset(
                   "images/slider3.png",
+                  fit: BoxFit.cover,
+                ),
+                Image.asset(
+                  "images/shoes.png",
+                  fit: BoxFit.cover,
+                ),
+                Image.asset(
+                  "images/jewelry.png",
+                  fit: BoxFit.cover,
+                ),
+                Image.asset(
+                  "images/beauty.png",
                   fit: BoxFit.cover,
                 ),
               ],
