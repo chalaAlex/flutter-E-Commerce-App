@@ -155,9 +155,11 @@
 //   }
 // }
 
+import 'package:e_appp/models/product_model.dart';
 import 'package:e_appp/screens/Home/Widget/category.dart';
 import 'package:e_appp/screens/Home/Widget/home_app_bar.dart';
 import 'package:e_appp/screens/Home/Widget/image_slider.dart';
+import 'package:e_appp/screens/Home/Widget/product_cart.dart';
 import 'package:e_appp/screens/Home/Widget/search_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -184,9 +186,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 15.0,
               ),
               CustomAppBar(),
-              SizedBox(height: 15.0,),
+              SizedBox(
+                height: 15.0,
+              ),
               MySearchBar(),
-              SizedBox(height: 15.0,),
+              SizedBox(
+                height: 15.0,
+              ),
               ImageSlider(
                 currentSlide: currentSlider,
                 onChanged: (value) {
@@ -198,6 +204,37 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               const Categories(),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Special For you",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w800,
+                      fontSize: 25.0,
+                    ),
+                  ),
+                  Text(
+                    "See All",
+                    style: TextStyle(
+                      fontSize: 15.0,
+                    ),
+                  ),
+                ],
+              ),
+              GridView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                ),
+                itemCount: products.length,
+                itemBuilder: (context, index) {
+                  return ProductCard(
+                    product: products[index],
+                  );
+                },
+              ),
             ],
           ),
         ),
