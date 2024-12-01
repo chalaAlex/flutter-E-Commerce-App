@@ -120,6 +120,7 @@
 
 import 'package:e_appp/constants.dart';
 import 'package:e_appp/models/product_model.dart';
+import 'package:e_appp/screens/Detail/detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
@@ -129,7 +130,16 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailScreen(
+              product: product,
+            ),
+          ),
+        );
+      },
       child: Stack(
         children: [
           Container(
@@ -142,14 +152,17 @@ class ProductCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height: 15,
+                  height: 5,
                 ),
                 Center(
-                  child: Image.asset(
-                    product.image,
-                    width: 130,
-                    height: 130,
-                    fit: BoxFit.cover,
+                  child: Hero(
+                    tag: product.image,
+                    child: Image.asset(
+                      product.image,
+                      width: 130,
+                      height: 130,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -167,12 +180,62 @@ class ProductCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 15,
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "\$${product.price}",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                    Row(
+                      children: List.generate(
+                        product.colors.length,
+                        (index) => Container(
+                          width: 18.0,
+                          height: 18.0,
+                          margin: EdgeInsets.only(right: 4),
+                          decoration: BoxDecoration(
+                            color: product.colors[index],
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               ],
             ),
-          )
+          ),
+          Positioned(
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(
+                  color: kprimaryColor,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    bottomLeft: Radius.circular(10),
+                  ),
+                ),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Icon(
+                    Icons.favorite_border,
+                    color: Colors.white,
+                    size: 22,
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

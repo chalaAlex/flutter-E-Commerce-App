@@ -127,11 +127,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int currentIndex = 2;
 
   List screens = const [
-    Scaffold(),
+    Scaffold(),// GridViewScreen()
     Favorite(),
     HomeScreen(),
     CartScreen(),
-    Scaffold(),
+    Scaffold(), // ProfileScreen()
   ];
 
   @override
@@ -191,25 +191,25 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               onPressed: () {
                 setState(() {
-                  currentIndex = 2;
+                  currentIndex = 3;
                 });
               },
               icon: Icon(
                 Icons.shopping_cart_outlined,
                 size: 30,
-                color: currentIndex == 2 ? kprimaryColor : Colors.grey.shade400,
+                color: currentIndex == 3 ? kprimaryColor : Colors.grey.shade400,
               ),
             ),
             IconButton(
               onPressed: () {
                 setState(() {
-                  currentIndex = 3;
+                  currentIndex = 4;
                 });
               },
               icon: Icon(
                 Icons.person,
                 size: 30,
-                color: currentIndex == 3 ? kprimaryColor : Colors.grey.shade400,
+                color: currentIndex == 4 ? kprimaryColor : Colors.grey.shade400,
               ),
             ),
           ],

@@ -1,7 +1,19 @@
 // KEY CONCEPTS.
 
 
-  Screens                      Widgets
+  Screens                            Widgets
 - Category - - - - - - - - - - ListView()
 - Home - - - - - - - - - - - - GridView()
-- Product_Card - - - - - - - - Stack()
+- Product_Card - - - - - - - - Stack(), List.generate()
+- DetailScreen - - - - - - - - Spacer(),
+- ImageSlider - - - - - - - -  PageView(),
+              - - - - - - - -  Positioned(),
+              - - - - - - - -  
+
+Flow for quantity:
+
+  - Initialize the quantity with product.quantity;
+  - Listen for user clicks;
+  - identify if add icon or remove icons are clicked:
+  - call setState() to update the product.quantity;
+  - 

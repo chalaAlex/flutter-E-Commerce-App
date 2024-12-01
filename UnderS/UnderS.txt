@@ -1,0 +1,9 @@
+TODO 1:  Create a list of objects that holds various data's of products and display the data inside 
+the list using ListView() widget. 
+
+TODO 2: Add the functionality to add and remove the product from the list dynamically. Note: Use IconButton() to do this.
+
+TODO 3: Create a simple and multiple (4)  screen pages and navigate through them. Use BottomAppBar() or AppBar().
+
+TODO 4: Display data on the UI by querying it from a database, and explain all th steps should be followed. Note: use Node.js, 
+        MySQL.

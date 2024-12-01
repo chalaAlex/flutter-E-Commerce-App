@@ -41,7 +41,7 @@ class Categories extends StatelessWidget {
         separatorBuilder: (context, index) {
           // A function that builds the separator widgets displayed between list items.
           return const SizedBox(
-            width: 20.0,
+            width: 5.0,
           );
         },
         itemCount: categories.length, // total number of items in the list.

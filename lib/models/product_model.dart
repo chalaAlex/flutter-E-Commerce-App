@@ -27,23 +27,6 @@ class Product {
 
 final List<Product> products = [
   Product(
-    title: "Wireless Headphones",
-    description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
-    image: "images/all/wireless.png",
-    price: 120,
-    seller: "Tariqul isalm",
-    colors: [
-      Colors.black,
-      Colors.blue,
-      Colors.orange,
-    ],
-    category: "Electronics",
-    review: "(320 Reviews)",
-    rate: 4.8,
-    quantity: 1,
-  ),
-  Product(
     title: "Woman Sweter",
     description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
@@ -75,6 +58,23 @@ final List<Product> products = [
     category: "Electronics",
     review: "(20 Reviews)",
     rate: 4.0,
+    quantity: 1,
+  ),
+  Product(
+    title: "Wireless Headphones",
+    description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
+    image: "images/all/wireless.png",
+    price: 120,
+    seller: "Tariqul isalm",
+    colors: [
+      Colors.black,
+      Colors.blue,
+      Colors.orange,
+    ],
+    category: "Electronics",
+    review: "(320 Reviews)",
+    rate: 4.8,
     quantity: 1,
   ),
   Product(

@@ -24,6 +24,7 @@ dev_dependencies:
 #    family: NotoSans
 
 flutter:
+  uses-material-design: true
   assets:
     - images/all/
     - images/men_fashion/
