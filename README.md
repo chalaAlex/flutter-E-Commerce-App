@@ -4,7 +4,7 @@
 ## Screenshots.
 <p align="center">
 <<<<<<< HEAD
-  <img src="assets/images/shots/shots1.png" alt="Image 1" width="30%" />
+  <img src="flutter_01.png" alt="Image 1" width="30%" />
 </p>
 
 ## Table of Contents
