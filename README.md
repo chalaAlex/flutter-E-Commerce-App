@@ -27,8 +27,8 @@
 - **Add to Cart**: Easily add products to your shopping cart.
 
 ## Installation
-1. Clone the repo: `git clone https://github.com/chalaAlex/BMI-Calculator.git`
-2. Navigate to the project folder: `cd BMI-Calculator`
+1. Clone the repo: `https://github.com/chalaAlex/flutter-E-Commerce-App.git`
+2. Navigate to the project folder: `cd flutter-E-Commerce-App`
 3. Install dependencies: `flutter pub get`
 
 ## Usage
