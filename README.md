@@ -3,8 +3,7 @@
 ### This Simple E-Commerce App is a lightweight application built using the Flutter framework, designed to showcase a curated collection of programming languages as products. It allows users to browse the list, mark their favorites, and add selected items to their cart. The app uses Provider for state management and firebase firestore as a database and supports realtime data updates.
 ## Screenshots.
 <p align="center">
-<<<<<<< HEAD
-  <img src="flutter_01.png" alt="Image 1" width="30%" />
+  <img src="Screenshot_1.png" alt="Image 1" width="30%" />
 </p>
 
 ## Table of Contents
