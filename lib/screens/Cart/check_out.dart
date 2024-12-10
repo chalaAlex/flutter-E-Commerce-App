@@ -1,13 +1,14 @@
 import 'package:e_appp/constants.dart';
-import 'package:e_appp/provider/favorite_provider.dart';
+import 'package:e_appp/provider/add_to_cart_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CheckOutBox extends StatelessWidget {
   const CheckOutBox({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final provider = CartProvider.of(context);
+    // final provider = CartProvider.of(context);
     return Container(
       height: 300,
       width: double.infinity,
@@ -64,12 +65,16 @@ class CheckOutBox extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
-              Text(
-                "\$${provider.totalPrice()}",
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
+              Consumer<CartProvider>(
+                builder: (context, provider, child) {
+                  return Text(
+                    "\$${provider.totalPrice()}",
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  );
+                },
               )
             ],
           ),
@@ -86,12 +91,16 @@ class CheckOutBox extends StatelessWidget {
                   fontSize: 18,
                 ),
               ),
-              Text(
-                "\$${provider.totalPrice()}",
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
+              Consumer<CartProvider>(
+                builder: (context, provider, child) {
+                  return Text(
+                    "\$${provider.totalPrice()}",
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  );
+                },
               )
             ],
           ),

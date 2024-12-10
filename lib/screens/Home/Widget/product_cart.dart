@@ -120,22 +120,32 @@
 
 import 'package:e_appp/constants.dart';
 import 'package:e_appp/models/product_model.dart';
+import 'package:e_appp/provider/Favorite_providers.dart';
 import 'package:e_appp/screens/Detail/detail_screen.dart';
+import 'package:e_appp/screens/Favorite/favorite.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class ProductCard extends StatelessWidget {
+class ProductCard extends StatefulWidget {
   final Product product;
   const ProductCard({super.key, required this.product});
 
   @override
+  State<ProductCard> createState() => _ProductCardState();
+}
+
+class _ProductCardState extends State<ProductCard> {
+  @override
   Widget build(BuildContext context) {
+    final provider = AddToCart.of(context);
+
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => DetailScreen(
-              product: product,
+              product: widget.product,
             ),
           ),
         );
@@ -156,9 +166,9 @@ class ProductCard extends StatelessWidget {
                 ),
                 Center(
                   child: Hero(
-                    tag: product.image,
+                    tag: widget.product.image,
                     child: Image.asset(
-                      product.image,
+                      widget.product.image,
                       width: 130,
                       height: 130,
                       fit: BoxFit.cover,
@@ -173,7 +183,7 @@ class ProductCard extends StatelessWidget {
                     left: 10,
                   ),
                   child: Text(
-                    product.title,
+                    widget.product.title,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
@@ -187,7 +197,7 @@ class ProductCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "\$${product.price}",
+                      "\$${widget.product.price}",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
@@ -195,13 +205,13 @@ class ProductCard extends StatelessWidget {
                     ),
                     Row(
                       children: List.generate(
-                        product.colors.length,
+                        widget.product.colors.length,
                         (index) => Container(
                           width: 18.0,
                           height: 18.0,
                           margin: EdgeInsets.only(right: 4),
                           decoration: BoxDecoration(
-                            color: product.colors[index],
+                            color: widget.product.colors[index],
                             shape: BoxShape.circle,
                           ),
                         ),
@@ -225,13 +235,22 @@ class ProductCard extends StatelessWidget {
                     bottomLeft: Radius.circular(10),
                   ),
                 ),
-                child: GestureDetector(
-                  onTap: () {},
-                  child: Icon(
-                    Icons.favorite_border,
-                    color: Colors.white,
-                    size: 22,
-                  ),
+                child: Consumer<AddToCart>(
+                  builder: (context, addToCart, child) {
+                    return GestureDetector(
+                      onTap: () {
+                        // addToCart.addToFavorite(widget.product);
+                        provider.togglFavorite(widget.product);
+                      },
+                      child: Icon(
+                        provider.isExist(widget.product)
+                            ? Icons.favorite
+                            : Icons.favorite_border,
+                        color: Colors.white,
+                        size: 25,
+                      ),
+                    );
+                  },
                 ),
               ),
             ),

@@ -1,5 +1,5 @@
 import 'package:e_appp/constants.dart';
-import 'package:e_appp/provider/favorite_provider.dart';
+import 'package:e_appp/provider/add_to_cart_provider.dart';
 import 'package:e_appp/screens/Cart/check_out.dart';
 import 'package:e_appp/screens/nav_bar_screen.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +40,7 @@ class _CartScreenState extends State<CartScreen> {
               );
               ScaffoldMessenger.of(context).showSnackBar(snackBar);
             }
-            // provider.totalPrice();
+            provider.totalPrice();
           });
         },
         child: Icon(
@@ -191,7 +191,7 @@ class _CartScreenState extends State<CartScreen> {
                                     productQuantity(Icons.remove, index),
                                     SizedBox(width: 10.0),
                                     Text(
-                                      cartItems.quantity.toString(), // 
+                                      cartItems.quantity.toString(), 
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black,
@@ -208,7 +208,7 @@ class _CartScreenState extends State<CartScreen> {
                         ),
                       ],
                     );
-                  }),
+              }),
             ),
           ],
         ),

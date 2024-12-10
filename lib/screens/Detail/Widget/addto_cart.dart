@@ -1,6 +1,6 @@
 import 'package:e_appp/constants.dart';
 import 'package:e_appp/models/product_model.dart';
-import 'package:e_appp/provider/favorite_provider.dart';
+import 'package:e_appp/provider/add_to_cart_provider.dart';
 import 'package:flutter/material.dart';
 
 class AddToCart extends StatefulWidget {

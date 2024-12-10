@@ -113,6 +113,7 @@
 import 'package:e_appp/constants.dart';
 import 'package:e_appp/screens/Favorite/favorite.dart';
 import 'package:e_appp/screens/Home/home_screen.dart';
+import 'package:e_appp/screens/Profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'Cart/cart_screen.dart';
 
@@ -131,7 +132,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     Favorite(),
     HomeScreen(),
     CartScreen(),
-    Scaffold(), // ProfileScreen()
+    Profile() // ProfileScreen()
   ];
 
   @override

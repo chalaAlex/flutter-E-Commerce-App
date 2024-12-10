@@ -163,6 +163,8 @@ import 'package:e_appp/screens/Home/Widget/product_cart.dart';
 import 'package:e_appp/screens/Home/Widget/search_bar.dart';
 import 'package:flutter/material.dart';
 
+import '../../models/category.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -172,8 +174,18 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentSlider = 0;
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+    List<List<Product>> selectedCategory = [
+      all,
+      shoes,
+      beauty,
+      womenFashion,
+      jewelry,
+      menFashion
+    ];
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -203,7 +215,57 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
               ),
-              const Categories(),
+              SizedBox(
+                height: 130.0,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    // itemBuilder: builds the list item. allows items to be visible as you scroll.
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedIndex = index;
+                        });
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(5.0),
+                        decoration: BoxDecoration(
+                          color:
+                              selectedIndex == index ? Colors.blue[200] : null,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Column(
+                          children: [
+                            Container(
+                              width: 65,
+                              height: 65,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: AssetImage(categories[index].image),
+                                  // This is how to insert image inside Container Widget.
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 5.0,
+                            ),
+                            Text(
+                              categories[index].title,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                  itemCount:
+                      categories.length, // total number of items in the list.
+                ),
+              ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -231,17 +293,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
                 ),
-                itemCount: products.length,
+                itemCount: selectedCategory[selectedIndex].length,
                 itemBuilder: (context, index) {
                   return ProductCard(
-                    product: products[index],
+                    product: selectedCategory[selectedIndex][index],
                   );
                 },
               ),
             ],
           ),
         ),
-        
       ),
     );
   }

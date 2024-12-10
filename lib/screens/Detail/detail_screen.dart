@@ -28,7 +28,9 @@ class _MyWidgetState extends State<DetailScreen> {
           child: Column(
             children: [
               // For back button, share and favorite.
-              DetailAppBar(),
+              DetailAppBar(
+                product: widget.product,
+              ),
               // for detail image slider
               MyImageSlider(
                   image: widget.product.image,
@@ -83,7 +85,7 @@ class _MyWidgetState extends State<DetailScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // for product name, price, rating, seller.
-                  ItemsDetails(product: widget.product),
+                    ItemsDetails(product: widget.product),
                   ],
                 ),
               ),
