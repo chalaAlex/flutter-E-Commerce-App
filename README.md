@@ -1,7 +1,6 @@
-# BMI Calculator
+# SIMPLE E-COMMERCE APP
 
-### This project is a Flutter-based mobile application that helps users determine their Body Mass Index based on their weight and height, providing insights into their health status. 
-
+### This Simple E-Commerce App is a lightweight application built using the Flutter framework, designed to showcase a curated collection of programming languages as products. It allows users to browse the list, mark their favorites, and add selected items to their cart. The app uses Provider for state management and manages the product data locally using a predefined list, eliminating the need for a database.
 ## Screenshots.
 <p align="center">
 <<<<<<< HEAD
